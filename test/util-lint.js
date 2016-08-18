@@ -3,7 +3,7 @@
 var fs = require("fs"), path = require("path"), tern = require("tern"), assert = require('assert');
 require("tern/plugin/node"),
 require("tern-lint");
-require("../node-extension.js");
+require("../gobject.js");
 
 var projectDir = path.resolve(__dirname, "..");
 var resolve = function(pth) {
@@ -30,7 +30,7 @@ var createServer = exports.createServer = function(defNames, options) {
   var plugins = {
     "node": {},
     "lint" : options ? options : {},
-    "node-extension": {}
+    "gobject": {}
   };
   var server = new tern.Server({
     plugins : plugins,
